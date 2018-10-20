@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Checkout {
 	private Vector<DessertItem> di;
-	private DessertShoppe ds = new DessertShoppe();
+	//private DessertShoppe ds = new DessertShoppe();
 	
 	public Checkout() {
 		// TODO Auto-generated constructor stub
@@ -31,14 +31,14 @@ public class Checkout {
 	}
 	
 	public int totalTax() {
-		return (int) Math.round(totalCost() * ds.taxRate);
+		return (int) Math.round(totalCost() * DessertShoppe.taxRate);
 		
 	}
 	
 	@Override
 	public String toString() {
-		String s = ds.lenFilling(ds.storeName+"Dessert Shoppe", ds.nameSizeMax + ds.costLen);
-		s += "\n" + ds.lenFilling("--------------------", ds.nameSizeMax + ds.costLen);
+		String s = DessertShoppe.lenFilling(DessertShoppe.storeName+"Dessert Shoppe", DessertShoppe.nameSizeMax + DessertShoppe.costLen);
+		s += "\n" + DessertShoppe.lenFilling("--------------------", DessertShoppe.nameSizeMax + DessertShoppe.costLen);
 		s += "\n";
 		
 		for (DessertItem i : di) {
@@ -47,14 +47,14 @@ public class Checkout {
 
 		s += "\n";		
 				
-		s += "\n" + ds.lenFilling("Tax");
+		s += "\n" + DessertShoppe.lenFilling("Tax");
 		int tax = totalTax();
-		s += ds.lenFilling(tax);
+		s += DessertShoppe.lenFilling(tax);
 
 		
-		s += "\n" + ds.lenFilling("Total Cost");
+		s += "\n" + DessertShoppe.lenFilling("Total Cost");
 		int totalCost = totalCost() + totalTax();
-		s += ds.lenFilling(totalCost);
+		s += DessertShoppe.lenFilling(totalCost);
 		
 
 		return s;

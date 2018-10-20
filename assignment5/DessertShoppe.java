@@ -1,8 +1,8 @@
 package assignment5;
 
 public class DessertShoppe {
-	final String storeName = "M & M";
-	final double taxRate = 0.065;
+	final static String storeName = "M & M";
+	final static double taxRate = 0.065;
 	final static int nameSizeMax = 30;
 	final static int costLen = 10;
 	
